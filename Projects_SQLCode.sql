@@ -1,4 +1,3 @@
-
 --====================================================================
 --PROJECT: TELECOM REVENUE AND CUSTOMER CHURN ANALYSIS
 --DEVELOPER: MOHINI JAYBHAYE
@@ -7,16 +6,19 @@
 --DROP Old view--
 
 drop view if exists vw_customer_clean;
-go
+Go
 
 drop view if exists vw_recharge_clean ;
-go
+Go
 
 drop view if exists vw_usage_clean;
-go
+Go
 
 drop view if exists vw_date_clean;
-go
+Go
+
+drop view if exists vw_churn_customers;
+Go
 
 --clean customer view--
 CREATE VIEW vw_customer_clean AS
@@ -30,8 +32,7 @@ CREATE VIEW vw_recharge_clean AS
 with dedup as(select*,row_number()over(partition by customer_id,recharge_date,amount order by recharge_id )as rn from fact_recharge)
 select  recharge_id,customer_id,try_convert(date,recharge_date,105)as recharge_date,try_convert(decimal(18,2),amount)as amount,
 plan_name ,lower(plan_type)as plan_type  from dedup where rn=1   and try_convert(decimal(18,2),amount)is not null ;
-go
-
+Go
 
 --clean usage view--
 CREATE VIEW  vw_usage_clean AS
@@ -44,7 +45,26 @@ GO
 CREATE VIEW vw_date_clean AS
 select TRY_CONVERT(date,date,105)as date,TRY_CONVERT(int,year)as year,TRY_CONVERT(int,month)as month_number,month_name,quarter,week_day 
 from dim_date;
-go
+Go
+
+ --create view for churn_customer--
+CREATE VIEW  vw_churn_customers AS
+with last_usage as(select customer_id,max(usage_date)as last_active_day from vw_usage_clean where data_mb>0 or call_minutes>0 group by customer_id),
+last_recharge as(select customer_id ,max(recharge_date)as last_recharge_date from vw_recharge_clean group by customer_id)
+select c.customer_id,c.segment,c.region,lu.last_active_day,lr.last_recharge_date from vw_customer_clean c left join last_usage lu on c.customer_id=lu.customer_id 
+left join last_recharge lr on c.customer_id=lr.customer_id where (lu.last_active_day is not null or lr.last_recharge_date is not null)
+and lu.last_active_day<dateadd(day,-30,(select max(usage_date) from vw_usage_clean)) and last_recharge_date<dateadd(day,-45,(select max(recharge_date) from vw_recharge_clean));
+
+--how do I create view for churn_customer?
+--I defined churn customers as those who were previously active but have not shown any usage activity in the last 30 days and have not recharged in the last 45 days.
+--I created a CTE to calculate last usage activity date per customer using MAX. I filtered only for meaningful acitivity like data usage or call minutes were gerater than zero to avoid cosidering inactive records.
+--After that, I calculated the last recharge date per customer to understand the recency od customer payment.
+--Then I joined usage and recharge data with the clean customer table using LEFT JOIN to include all customers for analysis.
+--After that, I excluded those customers who never had any activity,it should not be considered as a churn.
+--Finally, I filtered for those customers whose last usage activity is older than 30 days and last recharge is older than 45 days.
+
+--why i create view for churn_customer?
+--I created a view for churn customers to simplify complex logic, ensure reusability, and keep the reporting layer clean and efficient
 
 --validation--
 
@@ -84,7 +104,6 @@ select min(call_minutes)as min_call,MAX(call_minutes)as max_call from vw_usage_c
 select min(year) as min ,max(year)as max from vw_date_clean;
 
 select min(month_number)as min,max(month_number)as max from vw_date_clean;
-
 
 --check duplicates--
 
