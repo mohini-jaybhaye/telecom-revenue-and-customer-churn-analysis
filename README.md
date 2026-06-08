@@ -1,6 +1,6 @@
 # Telecom Revenue and Customer Churn Analysis
 ## Project Overview 
-Developed an end-to-end analytics solution to analyze revenue performance, understand customer chrun behavior, map revenue loss, and identify high-value customer segments to generate actionable business insights.This project showcases how raw telecom data is transformed into structured database layers and visualized through an interactive dashboard.
+Developed an end-to-end analytics solution to analyze revenue performance, understand customer churn behavior, map revenue loss, and identify high-value customer segments to generate actionable business insights.This project showcases how raw telecom data is transformed into structured database layers and visualized through an interactive dashboard.
 
 ---
 ## Business Problem & Objectives
@@ -35,7 +35,7 @@ Implemented a robust business definition to accurately isolate churned customers
 ## Power BI Data Modeling & Dashboard Highlights
 The corresponding '.pbix' reporting file connects directly to the cleaned SQL views. To ensure optimal performance and deep insights, the Power BI solution includes:
 ### 1. Robust Data Modeling (Star Schema)
-* Established One-to-Many Relationships between the dimension and fact tables ('Customer', 'Recharge', 'Usage', 'Date').
+* Established One-to-Many Relationships between the dimension tables('Customer', 'Date') and fact tables ('Recharge', 'Usage').
 * Used common keys like 'Customer ID' and date fields to enable seamless, dynamic cross-filtering across all report pages.
 
 ### 2. Advanced Analytics & Dax Formulas
