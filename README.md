@@ -14,7 +14,7 @@ In the telecom industry, retaining high-value customers and maintaining a strong
 * Database Management: SQL Server (SSMS)
 * Business Intelligence: Microsoft Excel & Power BI
 * SQL Mastery: CTEs, Joins, Window Functions ('ROW_NUMBER()'), Date Manipulation ('DATEADD', 'TRY_CONVERT'), Data Cleaning, View Creation, and Validation of Cleaned Views.
-* Power BI Mastery: Data Modeling, Star Schema, Adanced DAX, and Interactive Executive Dashboarding.
+* Power BI Mastery: Data Modeling, Star Schema, Advanced DAX, and Interactive Executive Dashboarding.
   
 ---
 ## Project Architecture & Backend SQL Logic
@@ -32,8 +32,18 @@ Implemented a robust business definition to accurately isolate churned customers
 * Used CTEs and LEFT JOIN to dynamically calculate maximum thresholds without capturing completely inactive test records.
   
 ---
-## Power BI Dashboard Highlights
-The corresponding 'pbix.' reporting file connects directly to these cleaned SQL views to track:
-* Executive KPIs: Active Customers, MoM Growth %, ARPU, Churn %, Revenue Loss.
-* Slicers & Filters: Dynamic analysis by Region,Customer Segment, and Timeline.
-* Proactive Action List: A dynamic grid pinpointing high-value customers currently at risk to directly assist retention marketing campaigns.
+## Power BI Data Modeling & Dashboard Highlights
+The corresponding '.pbix' reporting file connects directly to the cleaned SQL views. To ensure optimal performance and deep insights, the Power BI solution includes:
+### 1. Robust Data Modeling (Star Schema)
+* Established One-to-Many Relationships between the dimension and fact tables ('Customer', 'Recharge', 'Usage', 'Date').
+* Used common keys like 'Customer ID' and date fields to enable seamless, dynamic cross-filtering across all report pages.
+
+### 2. Advanced Analytics & Dax Formulas
+Formulated complex DAX measures and calculated columns to track business-critical telecom KPIs, utilizing functions like 'CALCULATE', 'FILTER', 'DISTINCTCOUNT', and 'IF' to measure:
+* Core Metrics: Total Revenue, Average Revenue Per User (ARPU), and Active Customers.
+* Trend Analysis: Month-over-Month (MoM) Growth %, Churn Rate %, and Total Revenue Loss.
+
+### 3. Interactive Executive Dashboard Design
+Built a structured 2-page dashboard tailored for retention management:
+* Page 1 (Revenue Performance): Visualizes monthly revenue movements, region-wise trends and segment-wise metrics to pinpoint top-performing areas.
+* Page 2 (Customer Churn Analysis): Tracks churned customers, identifies high-risk customers, and map revenue loss to provide actionable lists for proactive marketing retention strategies.
