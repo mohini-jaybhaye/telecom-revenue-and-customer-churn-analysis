@@ -39,7 +39,7 @@ The corresponding '.pbix' reporting file connects directly to the cleaned SQL vi
 * Used common keys like 'Customer ID' and date fields to enable seamless, dynamic cross-filtering across all report pages.
 
 ### 2. Advanced Analytics & Dax Formulas
-Formulated complex DAX measures and calculated columns to track business-critical telecom KPIs, utilizing functions like 'CALCULATE', 'FILTER', 'DISTINCTCOUNT', and 'IF' to measure:
+Formulated complex DAX measures and calculated columns to track business-critical telecom KPIs, utilizing functions like 'SUM', 'CALCULATE', 'FILTER', 'DISTINCTCOUNT', and 'IF' to measure:
 * Core Metrics: Total Revenue, Average Revenue Per User (ARPU), and Active Customers.
 * Trend Analysis: Month-over-Month (MoM) Growth %, Churn Rate %, and Total Revenue Loss.
 
