@@ -47,3 +47,13 @@ Formulated complex DAX measures and calculated columns to track business-critica
 Built a structured 2-page dashboard tailored for retention management:
 * Page 1 (Revenue Performance): Visualizes monthly revenue movements, region-wise trends and segment-wise metrics to pinpoint top-performing areas.
 * Page 2 (Customer Churn Analysis): Tracks churned customers, identifies high-risk customers, and map revenue loss to provide actionable lists for proactive marketing retention strategies.
+
+---
+## Dashboard Preview
+
+### Page 1: Revenue Performance
+![Revenue Performance Dashboard](dashboard_page1.png)
+
+### Page 2: Customer Churn Analysis
+![Customer Churn Analysis Dashboard](dashboard_page2.png)
+
