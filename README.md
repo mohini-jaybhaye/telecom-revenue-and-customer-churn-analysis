@@ -45,8 +45,8 @@ Formulated complex DAX measures and calculated columns to track business-critica
 
 ### 3. Interactive Executive Dashboard Design
 Built a structured 2-page dashboard tailored for retention management:
-* Page 1 (Revenue Performance): Visualizes monthly revenue movements, region-wise trends and segment-wise metrics to pinpoint top-performing areas.
-* Page 2 (Customer Churn Analysis): Tracks churned customers, identifies high-risk customers, and map revenue loss to provide actionable lists for proactive marketing retention strategies.
+* Page 1 (Revenue Performance): Visualizes monthly revenue movements to track 10.48M Total Revenue and 2.10K ARPU, identifying region-wise trends and key revenue contributors with a 6.58% MoM Growth.
+* Page 2 (Customer Churn Analysis): Analysed churn trends for 5.0K Total Customers to isolate 1.6K churn customers, mapping a 31.98% churn rate and 2.99M revenue loss to provide actionable insights for proactive retention strategies.
 
 ---
 ## Dashboard Preview
