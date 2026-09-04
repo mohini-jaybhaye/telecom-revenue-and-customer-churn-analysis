@@ -129,4 +129,3 @@ select top 20 * from vw_customer_clean c join vw_recharge_clean r on c.customer_
 --I validated cleaned views using row count comparison, null checks, duplicate checks, and business sanity checks on aggregates.
 
 
-
