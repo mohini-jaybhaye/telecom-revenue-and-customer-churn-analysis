@@ -22,7 +22,7 @@
 * Customer Revenue = SUM(vw_recharge_clean[amount])
 * Recharge Count = COUNTROWS(vw_recharge_clean)
 
---- CALCULATED COLUMNS (DATA MODELING) ---
+--- CALCULATED COLUMNS  ---
 
 *  Churn Date = MAX(vw_churn_customers[last_recharge_date].[Date],vw_churn_customers[last_active_day].[Date])
 *  Customer Type = SWITCH(TRUE(),[Recharge Count]=1,"One-time",[Recharge Count]<=5,"Low Repeat","High Repeat")
