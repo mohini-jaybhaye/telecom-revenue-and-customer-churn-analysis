@@ -4,10 +4,7 @@ Developed an end-to-end analytics solution to analyze revenue performance, under
 
 ---
 ## Business Problem & Objectives
-In the telecom industry, retaining high-value customers and maintaining a strong Average Revenue Per User (ARPU) is critical.This project targets:
-* Identifying high-risk customers who are likely to churn based on recent inactivity.
-* Cleaning, transforming, and validating raw data for precise dashboard metrics.
-* Monitoring monthly revenue trends to isolate specific segment-wise revenue drops.
+In the telecom sector, customer churn directly impact revenue, and acquiring a new customer costs 5 times more than retaining an existing one. The primary business problem was that the management lacked clarity on why customers were leaving, which customer segments were generating low ARPU(Average Revenue Per User), and where the exact revenue loss was occuring. To solve this business problem I developed an end to end Telecom Revenue and Customer Churn Analysis Project using SQL and Power BI.The Main Objectives was to identify revenue performance, customer churn behavior, map revenue loss, analysing trends and retaining high-value customers.
   
 ---
 ## Tech Stack & Skills Demonstrated
