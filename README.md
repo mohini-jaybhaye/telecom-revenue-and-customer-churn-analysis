@@ -72,7 +72,7 @@ Developed measures to calculate key performance indicators, including:
 These calculations support interactive KPI reporting, customer segmentation, revenue performance analysis, and data-driven retention decisions.
 
 **DAX Documentation:**
-![View_DAX_Documentation](PASTE_YOUR_DAX_FILE_LINK_HERE)
+![View DAX Documentation](DAX_measures & calculated columns.dax)
 
 ## Dashboard Pages
 
