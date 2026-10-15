@@ -1,5 +1,5 @@
 # Telecom Revenue and Customer Churn Analysis
-## Project Overview 
+
 ## Project Overview
 Developed an end-to-end Telecom Revenue and Customer Churn Analysis solution using SQL Server and Power BI to evaluate revenue performance, analyze customer churn patterns, and identify customer segments requiring retention attention.
 The project involves cleaning and validating telecom data, building structured SQL views, defining business-focused KPIs, and developing interactive Power BI dashboards. The analysis explores revenue trends, Average Revenue Per User (ARPU), customer activity, recharge behavior, and churn patterns to generate actionable business insights and support data-driven decision-making.
@@ -38,6 +38,9 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Developed churn identification logic using customer usage and recharge inactivity criteria to identify customers requiring retention attention.
 - Used SQL joins, CTEs, aggregations, and validation queries to support the analysis.
 
+ ![View SQL Scripts](PASTE_YOUR_SQL_FOLDER_LINK_HERE)
+
+
 ### Power BI Data Modeling
 - Built a structured data model connecting customer, recharge, usage, and date tables.
 - Established relationships between relevant tables using Customer ID and date fields.
@@ -61,11 +64,14 @@ Developed measures to calculate key performance indicators, including:
 - **Active Customers:** Counts customers meeting the defined activity criteria.
 - **Revenue Growth %:** Tracks changes in revenue across reporting periods.
 - **Churn Rate %:** Measures the proportion of churned customers relative to the defined customer base.
-- **Revenue Associated with Churned Customers:** Evaluates revenue linked to customers identified as churned.
+- **Churned Revenue:** Evaluates revenue linked to customers identified as churned.
 
 These calculations support interactive KPI reporting, customer segmentation, revenue performance analysis, and data-driven retention decisions.
 
-## Dashboard Preview
+**DAX Documentation:**
+![View_DAX_Documentation](PASTE_YOUR_DAX_FILE_LINK_HERE)
+
+## Dashboard Pages
 
 ### Page 1: Revenue Performance
 Analyzes telecom revenue performance through interactive KPIs and visualizations.
@@ -88,20 +94,60 @@ Examines customer churn patterns and recharge behavior to identify segments requ
 
 ![Customer Churn Analysis Dashboard](Customer_Churn_Analysis.png)
 
+## Power BI Dashboard & Project File
+
+Explore the complete interactive Power BI dashboard by downloading the project file
+
+![Download the Power BI File (.pbix)](PASTE_YOUR_PBIX_LINK_HERE)
+
+## Key Business Insights
+
+### Revenue Performance
+- Monthly revenue fluctuates over time, with a noticeable dip around early 2026.
+- The West region contributes the highest revenue at approximately 4.3M, while the East region contributes approximately 0.3M.
+- The Youth segment contributes the largest share of revenue (49.51%), followed by Family (32.07%) and Business (18.42%).
+- Postpaid generates approximately 5.4M in revenue, slightly higher than Prepaid at 5.1M.
+- Combo plans feature prominently among the top revenue-generating plans across Prepaid and Postpaid categories.
+
+### Customer Churn Analysis
+- The overall churn rate is 31.98%, representing approximately 1.6K churned customers out of 5K customers.
+- Prepaid and Postpaid have nearly identical churn rates of approximately 32%.
+- The West region (645 churned customers) and South region (576 churned customers) together account for approximately 76% of churned customers.
+- Churned customers account for approximately 2.99M in associated revenue, highlighting the revenue contribution of customers identified as churned.
+- The Youth segment has the highest churn rate (34.57%), while the Business segment has the lowest (29.18%).
+- Low-frequency rechargers have the highest churn rate (41.05%), whereas high-frequency rechargers have the lowest (24.55%).
+  
+## Business Recommendations
+
+### Revenue Performance
+- Investigate monthly revenue fluctuations to identify periods of decline and opportunities to improve revenue consistency.
+- Analyze customer base size and recharge activity in the East region to identify potential revenue improvement opportunities.
+- Explore targeted offers and suitable plan recommendations for the Business segment while maintaining revenue performance in the Youth segment.
+- Analyze the performance of Combo plans across customer segments and subscription types to identify opportunities for relevant plan promotions.
+
+### Customer Churn Analysis
+- Identify Youth customers with low usage and evaluate personalized plans or relevant offers to support retention.
+- Investigate possible service quality, pricing, and customer experience issues in the West and South regions, where churned customer counts are high.
+- Prioritize high-value customers among the churned customer base for further analysis and use the findings to design targeted retention strategies.
+- Use recharge reminders and suitable recharge offers to encourage consistent recharge activity among low-frequency rechargers.
+- Analyze the approximately 2.99M revenue associated with churned customers to understand the financial significance of churn and guide future retention planning.
+
+## Project Outcomes
+
+This project demonstrates an end-to-end telecom data analysis workflow using SQL Server and Power BI. It combines data cleaning, SQL views, data modeling, DAX calculations, and interactive dashboards to analyze revenue performance, customer activity, recharge behavior, and churn patterns.
+The analysis highlights key revenue-generating segments, identifies customer groups with higher churn rates, and quantifies the revenue associated with customers identified as churned. These insights can help businesses prioritize retention analysis, evaluate customer engagement, and make data-driven decisions.
+Through this project, I strengthened my practical skills in SQL, Power BI, data modeling, DAX, KPI reporting, and business insight generation.
 
 
 
-### 3. Interactive Executive Dashboard Design
-Built a structured 2-page dashboard tailored for retention management:
-* Page 1 (Revenue Performance): Visualizes monthly revenue movements to track 10.48M Total Revenue and 2.10K ARPU, identifying region-wise trends and key revenue contributors with a 6.58% MoM Growth.
-* Page 2 (Customer Churn Analysis): Analysed churn trends for 5.0K Total Customers to isolate 1.6K churn customers, mapping a 31.98% churn rate and 2.99M revenue loss to provide actionable insights for proactive retention strategies.
+
+
+
+
+
+
+
+
+
 
 ---
-## Dashboard Preview
-
-### Page 1: Revenue Performance
-![Revenue Performance Dashboard](Customer_Revenue_Performance.png)
-
-### Page 2: Customer Churn Analysis
-![Customer Churn Analysis Dashboard](Customer_Churn_Analysis.png)
-
