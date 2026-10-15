@@ -101,7 +101,7 @@ Examines customer churn patterns and recharge behavior to identify segments requ
 
 Explore the complete interactive Power BI dashboard by downloading the project file
 
-![Download the Power BI File (.pbix)](PASTE_YOUR_PBIX_LINK_HERE)
+![Download the Power BI File (.pbix)](Revenue_and_Churn_Analysis.pbix)
 
 ## Key Business Insights
 
