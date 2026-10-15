@@ -38,7 +38,7 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Developed churn identification logic using customer usage and recharge inactivity criteria to identify customers requiring retention attention.
 - Used SQL joins, CTEs, aggregations, and validation queries to support the analysis.
 
- ![View SQL Scripts](SQL_Data_Cleaning_and_Churn_Logic)
+ ![View SQL Scripts](SQL/SQL_Data_Cleaning_and_Churn_Logic)
 
 
 ### Power BI Data Modeling
@@ -72,7 +72,7 @@ Developed measures to calculate key performance indicators, including:
 These calculations support interactive KPI reporting, customer segmentation, revenue performance analysis, and data-driven retention decisions.
 
 **DAX Documentation:**
-![View DAX Documentation](measures_calculated_columns.dax)
+![View DAX Documentation](DAX/measures_calculated_columns.dax)
 
 ## Dashboard Pages
 
@@ -84,7 +84,7 @@ Analyzes telecom revenue performance through interactive KPIs and visualizations
 - Compares revenue across regions, plans, and customer segments.
 - Highlights top revenue-generating customers and plans to support business analysis.
 
-![Revenue Performance Dashboard](Customer_Revenue_Performance.png)
+![Revenue Performance Dashboard](images/Customer_Revenue_Performance.png)
 
 ### Page 2: Customer Churn Analysis
 Examines customer churn patterns and recharge behavior to identify segments requiring retention attention.
@@ -95,13 +95,13 @@ Examines customer churn patterns and recharge behavior to identify segments requ
 - Examines revenue associated with churned customers to assess their revenue contribution.
 - Uses interactive filters to explore customer segments and identify areas for further investigation.
 
-![Customer Churn Analysis Dashboard](Customer_Churn_Analysis.png)
+![Customer Churn Analysis Dashboard](images/Customer_Churn_Analysis.png)
 
 ## Power BI Dashboard & Project File
 
 Explore the complete interactive Power BI dashboard by downloading the project file
 
-![Download the Power BI File (.pbix)](Revenue_and_Churn_Analysis.pbix)
+![Download the Power BI File (.pbix)](PowerBI/Revenue_and_Churn_Analysis.pbix)
 
 ## Key Business Insights
 
