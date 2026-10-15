@@ -1,7 +1,6 @@
---====================================================================
---PROJECT: TELECOM REVENUE AND CUSTOMER CHURN ANALYSIS
---DEVELOPER: MOHINI JAYBHAYE
---====================================================================
+--====================================================================================================================
+ SQL: Data Cleaning & Create Churn Customers business logic for Telecom revenue and customer churn analysis project
+--====================================================================================================================
 
 --DROP Old view--
 
@@ -21,6 +20,7 @@ drop view if exists vw_churn_customers;
 Go
 
 --clean customer view--
+
 CREATE VIEW vw_customer_clean AS
 select customer_id,try_convert(date,join_date,105)as join_date,isnull(nullif(region,'null'),'Unknown')as region,
 case when state like '%MAHar%' then 'Maharashtra' else state end as state,
@@ -28,6 +28,7 @@ isnull(nullif(segment,'null'),'Unknown')as segment from dim_customer;
 GO
 
 --clean recharge view--
+
 CREATE VIEW vw_recharge_clean AS
 with dedup as(select*,row_number()over(partition by customer_id,recharge_date,amount order by recharge_id )as rn from fact_recharge)
 select  recharge_id,customer_id,try_convert(date,recharge_date,105)as recharge_date,try_convert(decimal(18,2),amount)as amount,
@@ -35,6 +36,7 @@ plan_name ,lower(plan_type)as plan_type  from dedup where rn=1   and try_convert
 Go
 
 --clean usage view--
+
 CREATE VIEW  vw_usage_clean AS
 select customer_id,usage_id,try_convert(date,usage_date)as usage_date,
 try_convert(int,data_mb)as data_mb,try_convert(int,call_minutes)as call_minutes from fact_usage 
@@ -42,12 +44,14 @@ where try_convert(int,data_mb)is not null and try_convert(int,call_minutes)is no
 GO
 
 --clean date view--
+
 CREATE VIEW vw_date_clean AS
 select TRY_CONVERT(date,date,105)as date,TRY_CONVERT(int,year)as year,TRY_CONVERT(int,month)as month_number,month_name,quarter,week_day 
 from dim_date;
 Go
 
  --create view for churn_customer--
+
 CREATE VIEW  vw_churn_customers AS
 with last_usage as(select customer_id,max(usage_date)as last_active_day from vw_usage_clean where data_mb>0 or call_minutes>0 group by customer_id),
 last_recharge as(select customer_id ,max(recharge_date)as last_recharge_date from vw_recharge_clean group by customer_id)
