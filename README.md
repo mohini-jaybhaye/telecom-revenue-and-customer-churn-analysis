@@ -47,7 +47,7 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Organized the data model to support revenue analysis, customer activity monitoring, and churn analysis.
 - Prepared the model for interactive reporting and DAX-based KPI calculations.
 
-![Star Schema Data Model](Data_Model_Star_Schema.png)
+![Star Schema Data Model](images/Data_Model_Star_Schema.png)
 
 
 ## DAX Calculated Columns & Measures
