@@ -142,6 +142,7 @@ Explore the complete interactive Power BI dashboard by downloading the project f
 ---
 ## Project Structure
 
+'''text
 Telecom-Revenue-and-Customer-Churn-Analysis/
 │
 ├── README.md
@@ -160,7 +161,7 @@ Telecom-Revenue-and-Customer-Churn-Analysis/
     ├── Customer_Churn_Analysis.png
     ├── Customer_Revenue_Performance.png
     └── Data_Model_Star_Schema.png
-
+        '''
 ---
 ## Project Outcomes
 
