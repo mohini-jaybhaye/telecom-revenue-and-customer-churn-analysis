@@ -1,10 +1,11 @@
 # Telecom Revenue and Customer Churn Analysis
 ## Project Overview 
-Developed an end-to-end analytics solution to analyze revenue performance, understand customer churn behavior, map revenue loss, and identify high-value customer segments to generate actionable business insights.This project showcases how raw telecom data is transformed into structured database layers and visualized through an interactive dashboard.
+Developed an end-to-end Telecom Revenue and Customer Churn Analysis solution using SQL Server and Power BI to evaluate revenue performance, analyze customer churn patterns, identify revenue exposure, and understand high-value customer segments.
+The project transforms raw telecom data into cleaned SQL views and interactive Power BI dashboards to support data-driven business decisions.
 
 ---
 ## Business Problem & Objectives
-In the telecom sector, customer churn directly impact revenue, and acquiring a new customer costs 5 times more than retaining an existing one. The primary business problem was that the management lacked clarity on why customers were leaving, which customer segments were generating low ARPU(Average Revenue Per User), and where the exact revenue loss was occuring. To solve this business problem I developed an end to end Telecom Revenue and Customer Churn Analysis Project using SQL and Power BI.The Main Objectives was to identify revenue performance, customer churn behavior, map revenue loss, analysing trends and retaining high-value customers.
+
   
 ---
 ## Tech Stack & Skills Demonstrated
