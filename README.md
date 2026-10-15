@@ -49,7 +49,7 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 
 ![Star Schema Data Model](images/Data_Model_Star_Schema.png)
 
-
+---
 ## DAX Calculated Columns & Measures
 
 Developed DAX calculated columns and measures in Power BI to analyze customer recharge behavior, identify churn patterns, and monitor telecom revenue performance.
@@ -74,6 +74,7 @@ These calculations support interactive KPI reporting, customer segmentation, rev
 **DAX Documentation:**
 ![View DAX Documentation](DAX/measures_calculated_columns.dax)
 
+---
 ## Dashboard Pages
 
 ### Page 1: Revenue Performance
@@ -97,12 +98,14 @@ Examines customer churn patterns and recharge behavior to identify segments requ
 
 ![Customer Churn Analysis Dashboard](images/Customer_Churn_Analysis.png)
 
+---
 ## Power BI Dashboard & Project File
 
 Explore the complete interactive Power BI dashboard by downloading the project file
 
 ![Download the Power BI File (.pbix)](PowerBI/Revenue_and_Churn_Analysis.pbix)
 
+---
 ## Key Business Insights
 
 ### Revenue Performance
@@ -119,7 +122,8 @@ Explore the complete interactive Power BI dashboard by downloading the project f
 - Churned customers account for approximately 2.99M in associated revenue, highlighting the revenue contribution of customers identified as churned.
 - The Youth segment has the highest churn rate (34.57%), while the Business segment has the lowest (29.18%).
 - Low-frequency rechargers have the highest churn rate (41.05%), whereas high-frequency rechargers have the lowest (24.55%).
-  
+
+---
 ## Business Recommendations
 
 ### Revenue Performance
@@ -135,22 +139,9 @@ Explore the complete interactive Power BI dashboard by downloading the project f
 - Use recharge reminders and suitable recharge offers to encourage consistent recharge activity among low-frequency rechargers.
 - Analyze the approximately 2.99M revenue associated with churned customers to understand the financial significance of churn and guide future retention planning.
 
+---
 ## Project Outcomes
 
 This project demonstrates an end-to-end telecom data analysis workflow using SQL Server and Power BI. It combines data cleaning, SQL views, data modeling, DAX calculations, and interactive dashboards to analyze revenue performance, customer activity, recharge behavior, and churn patterns.
 The analysis highlights key revenue-generating segments, identifies customer groups with higher churn rates, and quantifies the revenue associated with customers identified as churned. These insights can help businesses prioritize retention analysis, evaluate customer engagement, and make data-driven decisions.
 Through this project, I strengthened my practical skills in SQL, Power BI, data modeling, DAX, KPI reporting, and business insight generation.
-
-
-
-
-
-
-
-
-
-
-
-
-
----
