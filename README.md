@@ -49,8 +49,8 @@ Built a structured 2-page dashboard tailored for retention management:
 ## Dashboard Preview
 
 ### Page 1: Revenue Performance
-![Revenue Performance Dashboard](Revenue%20performance%20dashboard.png)
+![Revenue Performance Dashboard](Customer_Revenue_Performance.png)
 
 ### Page 2: Customer Churn Analysis
-![Customer Churn Analysis Dashboard](Customer%20churn%20analysis%20dashboard.png)
+![Customer Churn Analysis Dashboard](Customer_Churn_Analysis.png)
 
