@@ -47,6 +47,9 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Organized the data model to support revenue analysis, customer activity monitoring, and churn analysis.
 - Prepared the model for interactive reporting and DAX-based KPI calculations.
 
+![Star Schema Data Model](Data_Model_Star_Schema.png)
+
+
 ## DAX Calculated Columns & Measures
 
 Developed DAX calculated columns and measures in Power BI to analyze customer recharge behavior, identify churn patterns, and monitor telecom revenue performance.
