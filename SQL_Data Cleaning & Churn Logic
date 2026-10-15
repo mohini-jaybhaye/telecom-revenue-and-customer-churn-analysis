@@ -1,5 +1,5 @@
 --====================================================================================================================
- SQL: Data Cleaning & Create Churn Customers business logic for Telecom revenue and customer churn analysis project
+ SQL: Data Cleaning & Create Customer Churn business logic for Telecom revenue and customer churn analysis project
 --====================================================================================================================
 
 --DROP Old view--
