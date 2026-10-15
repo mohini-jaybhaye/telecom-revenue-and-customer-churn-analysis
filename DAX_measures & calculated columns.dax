@@ -1,0 +1,54 @@
+==================================================================================================
+  POWER BI DAX MEASURES & CALCULATED COLUMNS - TELECOM REVENUE & CUSTOMER CHURN ANALYSIS PROJECT
+==================================================================================================
+
+----------------
+DAX Measures
+----------------
+
+--- DASHBOARD 1: REVENUE PERFORMANCE DASHBOARD ---
+
+Total Revenue = SUM(vw_recharge_clean[amount])
+
+ARPU = DIVIDE([Total Revenue],DISTINCTCOUNT(vw_recharge_clean[customer_id]))
+
+previously active customers = CALCULATE(DISTINCTCOUNT(vw_customer_clean[Customer_id]),FILTER(vw_customer_clean,CALCULATE(COUNTROWS(vw_recharge_clean),vw_recharge_clean[recharge_date]>0) ||CALCULATE(COUNTROWS(vw_usage_clean),vw_usage_clean[data_usage (mb)]>0 || vw_usage_clean[call_usage (Min)]>0)))
+
+Active Customers = [previously active customers]
+
+Previous Month Revenue = CALCULATE([Total Revenue],DATEADD(vw_date_clean[date],-1,MONTH))
+
+MoM Revenue Growth % = DIVIDE([Total Revenue]-[Previous Month Revenue],[Previous Month Revenue])
+
+Customer Revenue = SUM(vw_recharge_clean[amount])
+
+--- DASHBOARD 2: CUSTOMER CHURN ANALYSIS DASHBOARD ---
+
+Total Customers = DISTINCTCOUNT(vw_customer_clean[Customer_id])
+
+Churn Customers = COUNTROWS(vw_churn_customers)
+
+Churn Rate (%) = DIVIDE([Churn Customers],[previously active customers])
+
+Churned Revenue = CALCULATE([Total Revenue],vw_churn_customers)
+
+Churn Revenue by Plan = CALCULATE([Customer Revenue],FILTER(vw_customer_clean,vw_customer_clean[Customer_id] IN VALUES(vw_churn_customers[customer_id]))
+
+Avg Call (Minutes) = AVERAGE(vw_usage_clean[call_usage (Min)])
+
+Avg Data Usage (MB) = AVERAGE(vw_usage_clean[data_usage (mb)])
+
+---------------------
+CALCULATED COLUMNS
+---------------------
+
+Recharge Count = COUNTROWS(RELATEDTABLE(vw_recharge_clean))
+
+Recharge Frequency = SWITCH(TRUE(), vw_customer_clean[Recharge Count]<=3, "Low", vw_customer_clean[Recharge Count]<=6, "Medium", "High")
+
+Churn Date = VAR LastActive= vw_churn_customers[last_active_day] VAR LastRecharge= vw_churn_customers[last_recharge_date] VAR UsageInactiveDate= LastActive + 30 VAR RechargeInactiveDate= LastRecharge + 45 RETURN IF(ISBLANK(LastActive) || ISBLANK(LastRecharge), BLANK(), MAX(UsageInactiveDate, RechargeInactiveDate))
+
+
+
+  
+  
