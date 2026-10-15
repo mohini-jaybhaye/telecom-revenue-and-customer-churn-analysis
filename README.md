@@ -38,7 +38,7 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Developed churn identification logic using customer usage and recharge inactivity criteria to identify customers requiring retention attention.
 - Used SQL joins, CTEs, aggregations, and validation queries to support the analysis.
 
- ![View SQL Scripts](SQL/SQL_Data_Cleaning_and_Churn_Logic)
+ ![View SQL Scripts](SQL/SQL_Data_Cleaning_and_Churn_Logic.sql)
 
 
 ### Power BI Data Modeling
