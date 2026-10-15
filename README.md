@@ -1,45 +1,95 @@
 # Telecom Revenue and Customer Churn Analysis
 ## Project Overview 
-Developed an end-to-end Telecom Revenue and Customer Churn Analysis solution using SQL Server and Power BI to evaluate revenue performance, analyze customer churn patterns, identify revenue exposure, and understand high-value customer segments.
-The project transforms raw telecom data into cleaned SQL views and interactive Power BI dashboards to support data-driven business decisions.
+## Project Overview
+Developed an end-to-end Telecom Revenue and Customer Churn Analysis solution using SQL Server and Power BI to evaluate revenue performance, analyze customer churn patterns, and identify customer segments requiring retention attention.
+The project involves cleaning and validating telecom data, building structured SQL views, defining business-focused KPIs, and developing interactive Power BI dashboards. The analysis explores revenue trends, Average Revenue Per User (ARPU), customer activity, recharge behavior, and churn patterns to generate actionable business insights and support data-driven decision-making.
 
 ---
-## Business Problem & Objectives
+## Business Problem
 
+Telecom businesses need to monitor revenue performance and customer churn to maintain customer relationships and support sustainable revenue growth. However, analyzing revenue trends, customer activity, and recharge behavior across multiple datasets can make it difficult to identify customer segments that may require retention attention.
+This project addresses these challenges by analyzing telecom revenue, Average Revenue Per User (ARPU), customer usage patterns, recharge behavior, and churn indicators. The analysis aims to identify revenue trends, understand churn patterns across customer segments, and highlight revenue associated with churned customers to support informed business decisions.
+
+---
+## Project Objectives
+
+- Analyze telecom revenue trends to understand revenue performance across months, regions, plans, and customer segments.
+- Evaluate key performance indicators (KPIs), including Total Revenue, Average Revenue Per User (ARPU), and Churn Rate, MoM Growth.
+- Identify customer churn patterns using customer usage and recharge inactivity indicators.
+- Compare churn patterns across customer segments, subscription plans, regions, and recharge frequency.
+- Highlight customer segments requiring retention attention and assess revenue associated with churned customers.
+- Develop interactive Power BI dashboards to present actionable insights and support data-driven business decisions.
   
 ---
-## Tech Stack & Skills Demonstrated
-* Database Management: SQL Server (SSMS)
-* Business Intelligence: Microsoft Excel & Power BI
-* SQL Mastery: CTEs, Joins, Window Functions ('ROW_NUMBER()'), Date Manipulation ('DATEADD', 'TRY_CONVERT'), Data Cleaning, View Creation, and Validation of Cleaned Views.
-* Power BI Mastery: Data Modeling, Star Schema, Advanced DAX, and Interactive Executive Dashboarding.
+## Tools & Technologies
+
+- **SQL & Database:** SQL Server, SQL Server Management Studio (SSMS), SQL Queries, Joins, CTEs, Data Cleaning, Data Transformation, Data Validation, Views
+- **Data Visualization:** Microsoft Power BI, Power BI Desktop, Interactive Dashboards, KPI Reporting, Data Visualization
+- **Data Modeling:** Star Schema, Fact and Dimension Tables, Table Relationships
+- **DAX & Analytics:** DAX Measures, Calculated Columns, CALCULATE, FILTER, DISTINCTCOUNT, IF, KPI Calculations, ARPU, Revenue Growth, Churn Rate
   
 ---
-## Project Architecture & Backend SQL Logic
-The backend layer consists of optimized production-ready SQL scripts divided into two key areas:
-### 1. Data Cleaning & Structured Reporting Views
-Created optimized database views ('vw_customer_clean', 'vw_recharge_clean', 'vw_usage_clean', 'vw_date_clean') to automate data pipeline cleaning:
-* Eliminated NULL values and managed strict data-type casting using 'TRY_CONVERT' and 'ISNULL'.
-* Handled inconsistent text fields (e.g.,standardizing text inputs for states like 'Maharashtra').
-* Embedded business sanity checks and row-count comparisons to validate raw vs. cleaned record sets.
+## Data Preparation & Modeling
 
-### 2. Churn Analytics Logic ('vw_churn_customers')
-Implemented a robust business definition to accurately isolate churned customers using key inactivity flags:
-* Usage Check: Filtered for customers showing zero data (MB) or call activity in the last 30 days.
-* Recharge Check: Cross-referenced payment history to isolate profiles with zero recharges in the last 45 days.
-* Used CTEs and LEFT JOIN to dynamically calculate maximum thresholds without capturing completely inactive test records.
-  
----
-## Power BI Data Modeling & Dashboard Highlights
-The corresponding '.pbix' reporting file connects directly to the cleaned SQL views. To ensure optimal performance and deep insights, the Power BI solution includes:
-### 1. Robust Data Modeling (Star Schema)
-* Established One-to-Many Relationships between the dimension tables('Customer', 'Date') and fact tables ('Recharge', 'Usage').
-* Used common keys like 'Customer ID' and date fields to enable seamless, dynamic cross-filtering across all report pages.
+### SQL Data Preparation
+- Cleaned and validated telecom datasets using SQL Server to improve data consistency and reliability.
+- Handled missing values, standardized inconsistent text values, and validated data types using appropriate SQL functions.
+- Created reusable SQL Views to organize cleaned customer, recharge, usage, and date data.
+- Developed churn identification logic using customer usage and recharge inactivity criteria to identify customers requiring retention attention.
+- Used SQL joins, CTEs, aggregations, and validation queries to support the analysis.
 
-### 2. Advanced Analytics & Dax Formulas
-Formulated complex DAX measures and calculated columns to track business-critical telecom KPIs, utilizing functions like 'SUM', 'CALCULATE', 'FILTER', 'DISTINCTCOUNT', and 'IF' to measure:
-* Core Metrics: Total Revenue, Average Revenue Per User (ARPU), and Active Customers.
-* Trend Analysis: Month-over-Month (MoM) Growth %, Churn Rate %, and Total Revenue Loss.
+### Power BI Data Modeling
+- Built a structured data model connecting customer, recharge, usage, and date tables.
+- Established relationships between relevant tables using Customer ID and date fields.
+- Organized the data model to support revenue analysis, customer activity monitoring, and churn analysis.
+- Prepared the model for interactive reporting and DAX-based KPI calculations.
+
+## DAX Calculated Columns & Measures
+
+Developed DAX calculated columns and measures in Power BI to analyze customer recharge behavior, identify churn patterns, and monitor telecom revenue performance.
+
+### Calculated Columns
+
+- **Recharge Count:** Calculated customer recharge counts to analyze recharge activity.
+- **Recharge Frequency:** Classified customers based on their recharge frequency to compare customer behavior and churn patterns.
+- **Churn Date:** Created a date field to support churn-related analysis and date-based reporting.
+
+### DAX Measures
+Developed measures to calculate key performance indicators, including:
+- **Total Revenue:** Measures overall revenue generated from recharge transactions.
+- **Average Revenue Per User (ARPU):** Evaluates average revenue per customer.
+- **Active Customers:** Counts customers meeting the defined activity criteria.
+- **Revenue Growth %:** Tracks changes in revenue across reporting periods.
+- **Churn Rate %:** Measures the proportion of churned customers relative to the defined customer base.
+- **Revenue Associated with Churned Customers:** Evaluates revenue linked to customers identified as churned.
+
+These calculations support interactive KPI reporting, customer segmentation, revenue performance analysis, and data-driven retention decisions.
+
+## Dashboard Preview
+
+### Page 1: Revenue Performance
+Analyzes telecom revenue performance through interactive KPIs and visualizations.
+
+- Monitors Total Revenue, ARPU, Active Customers, and Revenue Growth.
+- Analyzes monthly revenue trends to understand revenue performance over time.
+- Compares revenue across regions, plans, and customer segments.
+- Highlights top revenue-generating customers and plans to support business analysis.
+
+![Revenue Performance Dashboard](Customer_Revenue_Performance.png)
+
+### Page 2: Customer Churn Analysis
+Examines customer churn patterns and recharge behavior to identify segments requiring retention attention.
+
+- Tracks total customers, churned customers, churn rate and revenue associated with churned customers.
+- Compares churn patterns across regions, by plans, and customer segments.
+- Analyzes churn patterns by recharge frequency to understand differences in customer behavior.
+- Examines revenue associated with churned customers to assess their revenue contribution.
+- Uses interactive filters to explore customer segments and identify areas for further investigation.
+
+![Customer Churn Analysis Dashboard](Customer_Churn_Analysis.png)
+
+
+
 
 ### 3. Interactive Executive Dashboard Design
 Built a structured 2-page dashboard tailored for retention management:
