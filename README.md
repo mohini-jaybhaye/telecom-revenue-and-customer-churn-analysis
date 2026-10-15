@@ -140,6 +140,28 @@ Explore the complete interactive Power BI dashboard by downloading the project f
 - Analyze the approximately 2.99M revenue associated with churned customers to understand the financial significance of churn and guide future retention planning.
 
 ---
+## Project Structure
+
+Telecom-Revenue-and-Customer-Churn-Analysis/
+│
+├── README.md
+│
+├── SQL/
+│   └── SQL_Data_Cleaning_and_Churn_Logic.sql
+│
+├── PowerBI/
+│   └── Revenue_and_Churn_Analysis.pbix
+│
+├── DAX/
+│   └── measures_calculated_columns.dax
+│
+└── images/
+    ├── 
+    ├── Customer_Churn_Analysis.png
+    ├── Customer_Revenue_Performance.png
+    └── Data_Model_Star_Schema.png
+
+---
 ## Project Outcomes
 
 This project demonstrates an end-to-end telecom data analysis workflow using SQL Server and Power BI. It combines data cleaning, SQL views, data modeling, DAX calculations, and interactive dashboards to analyze revenue performance, customer activity, recharge behavior, and churn patterns.
