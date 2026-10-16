@@ -16,14 +16,14 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 - Analyze telecom revenue trends to understand revenue performance across months, regions, plans, and customer segments.
 - Evaluate key performance indicators (KPIs), including Total Revenue, Average Revenue Per User (ARPU), and Churn Rate, MoM Growth.
 - Identify customer churn patterns using customer usage and recharge inactivity indicators.
-- Compare churn patterns across customer segments, subscription plans, regions, and recharge frequency.
+- Compare churn patterns across customer segments, plans, regions, and recharge frequency.
 - Highlight customer segments requiring retention attention and assess revenue associated with churned customers.
-- Develop interactive Power BI dashboards to present actionable insights and support data-driven business decisions.
+- Develop interactive Power BI dashboards to represent actionable insights and support data-driven business decisions.
   
 ---
 ## Tools & Technologies
 
-- **SQL & Database:** SQL Server, SQL Server Management Studio (SSMS), SQL Queries, Joins, CTEs, Data Cleaning, Data Transformation, Data Validation, Views
+- **SQL & Database:** SQL Server, SQL Server Management Studio (SSMS), SQL Queries, Joins, CTEs, Data Cleaning, Data Transformation, Data Validation, SQL Views
 - **Data Visualization:** Microsoft Power BI, Power BI Desktop, Interactive Dashboards, KPI Reporting, Data Visualization
 - **Data Modeling:** Star Schema, Fact and Dimension Tables, Table Relationships
 - **DAX & Analytics:** DAX Measures, Calculated Columns, CALCULATE, FILTER, DISTINCTCOUNT, IF, KPI Calculations, ARPU, Revenue Growth, Churn Rate
@@ -42,7 +42,7 @@ This project addresses these challenges by analyzing telecom revenue, Average Re
 
 
 ### Power BI Data Modeling
-- Built a structured data model connecting customer, recharge, usage, and date tables.
+- Built a structured Star Schema data model connecting customer, recharge, usage, and date tables.
 - Established relationships between relevant tables using Customer ID and date fields.
 - Organized the data model to support revenue analysis, customer activity monitoring, and churn analysis.
 - Prepared the model for interactive reporting and DAX-based KPI calculations.
@@ -111,7 +111,7 @@ Analyzes telecom revenue performance through interactive KPIs and visualizations
 Examines customer churn patterns and recharge behavior to identify segments requiring retention attention.
 
 - Tracks total customers, churned customers, churn rate and revenue associated with churned customers.
-- Compares churn patterns across regions, by plans, and customer segments.
+- Compares churn patterns across regions, plans, and customer segments.
 - Analyzes churn patterns by recharge frequency to understand differences in customer behavior.
 - Examines revenue associated with churned customers to assess their revenue contribution.
 - Uses interactive filters to explore customer segments and identify areas for further investigation.
@@ -160,8 +160,6 @@ Explore the complete interactive Power BI dashboard by downloading the project f
 - Analyze the approximately 2.99M revenue associated with churned customers to understand the financial significance of churn and guide future retention planning.
 
 ---
-## Project Structure
-
 ## Project Structure
 
 ```text
